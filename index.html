@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TH Climatização | Instalação e Manutenção de Ar-Condicionado em João Pessoa</title>
+    <meta name="description"
+        content="Especialistas em higienização, instalação e manutenção de qualidade. Atendimento rápido e eficiente em João Pessoa e região.">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0f4ff',
+                            100: '#e0e8ff',
+                            200: '#c2d2ff',
+                            300: '#94b3ff',
+                            400: '#6188ff',
+                            500: '#3855ff',
+                            600: '#0052cc', // Primary blue from image
+                            700: '#003399', // Dark blue from image
+                            800: '#142f99',
+                            900: '#172b7a',
+                        },
+                        accent: {
+                            500: '#f59e0b', // Amber/Orange for contrast (tools icon)
+                            600: '#d97706',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- AOS Animations -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        .hero-pattern {
+            background-color: #0052cc;
+            background-image: radial-gradient(circle at 100% 100%, #3855ff 0, #3855ff 5px, transparent 5px), radial-gradient(circle at 0 0, #3855ff 0, #3855ff 5px, transparent 5px);
+            background-size: 20px 20px;
+            background-repeat: repeat;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .blob {
+            position: absolute;
+            filter: blur(80px);
+            z-index: 0;
+            opacity: 0.6;
+        }
+
+        .pulse-btn {
+            animation: pulse-shadow 2s infinite;
+        }
+
+        @keyframes pulse-shadow {
+            0% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+            }
+
+            70% {
+                box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+            }
+        }
+    </style>
+</head>
+
+<body class="font-sans antialiased text-gray-800 bg-gray-50 overflow-x-hidden">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 transition-all duration-300 bg-white/90 backdrop-blur-md shadow-sm" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center gap-2">
+                    <div
+                        class="w-10 h-10 bg-brand-600 rounded-lg flex items-center justify-center text-white font-bold text-xl shadow-lg">
+                        <i class="fa-solid fa-snowflake"></i>
+                    </div>
+                    <span class="font-bold text-2xl tracking-tight text-brand-900">TH<span
+                            class="text-brand-600">Climatização</span></span>
+                </div>
+
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#servicos"
+                        class="text-gray-600 hover:text-brand-600 font-medium transition-colors">Serviços</a>
+                    <a href="#sobre" class="text-gray-600 hover:text-brand-600 font-medium transition-colors">Sobre
+                        Nós</a>
+                    <a href="#contato"
+                        class="text-gray-600 hover:text-brand-600 font-medium transition-colors">Contato</a>
+                    <a href="https://wa.me/558399341400?text=Olá!%20Gostaria%20de%20agendar%20um%20serviço%20de%20ar-condicionado."
+                        target="_blank"
+                        class="bg-green-500 hover:bg-green-600 text-white px-6 py-2.5 rounded-full font-semibold transition-all transform hover:scale-105 shadow-md flex items-center gap-2">
+                        <i class="fa-brands fa-whatsapp text-lg"></i> (83) 9934-1400
+                    </a>
+                </div>
+
+                <div class="md:hidden flex items-center">
+                    <button class="text-gray-600 hover:text-brand-600 focus:outline-none" id="mobile-menu-btn">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile menu -->
+        <div class="md:hidden hidden bg-white shadow-xl absolute w-full left-0 origin-top animate-fade-in-down"
+            id="mobile-menu">
+            <div class="px-4 pt-2 pb-6 space-y-2">
+                <a href="#servicos"
+                    class="block px-3 py-3 text-base font-medium text-gray-700 hover:text-brand-600 hover:bg-brand-50 rounded-md">Serviços</a>
+                <a href="#sobre"
+                    class="block px-3 py-3 text-base font-medium text-gray-700 hover:text-brand-600 hover:bg-brand-50 rounded-md">Sobre
+                    Nós</a>
+                <a href="#contato"
+                    class="block px-3 py-3 text-base font-medium text-gray-700 hover:text-brand-600 hover:bg-brand-50 rounded-md">Contato</a>
+                <a href="https://wa.me/558399341400" target="_blank"
+                    class="mt-4 flex items-center justify-center gap-2 w-full bg-green-500 text-white px-4 py-3 rounded-md font-bold">
+                    <i class="fa-brands fa-whatsapp text-xl"></i> Fale no WhatsApp
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden bg-brand-900" id="inicio">
+        <!-- Abstract Background -->
+        <div class="absolute inset-0 opacity-20">
+            <div
+                class="absolute right-0 top-0 w-[500px] h-[500px] bg-brand-400 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob">
+            </div>
+            <div
+                class="absolute left-0 bottom-0 w-[500px] h-[500px] bg-brand-200 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-2000">
+            </div>
+        </div>
+
+        <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10">
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div data-aos="fade-right" data-aos-duration="1000">
+                    <div
+                        class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-800/50 border border-brand-400/30 text-brand-100 mb-6 backdrop-blur-sm">
+                        <span class="flex h-2 w-2 relative">
+                            <span
+                                class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-300 opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-2 w-2 bg-brand-300"></span>
+                        </span>
+                        Atendimento em João Pessoa
+                    </div>
+
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-6">
+                        TH Instalação e <br />
+                        <span
+                            class="text-transparent bg-clip-text bg-gradient-to-r from-brand-200 to-blue-400">Manutenção
+                            <i class="fa-solid fa-screwdriver-wrench text-brand-300 text-4xl"></i></span>
+                    </h1>
+
+                    <p
+                        class="text-lg md:text-xl text-brand-100 mb-8 max-w-lg leading-relaxed mix-blend-screen opacity-90">
+                        Especialistas em higienização e manutenção de qualidade. Garantimos o clima perfeito para sua
+                        casa ou empresa com rapidez e eficiência.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="https://wa.me/558399341400?text=Olá!%20Preciso%20de%20um%20orçamento%20para%20meu%20ar-condicionado."
+                            target="_blank"
+                            class="pulse-btn bg-green-500 hover:bg-green-600 text-white text-center px-8 py-4 rounded-xl font-bold text-lg transition-all transform hover:-translate-y-1 shadow-xl flex items-center justify-center gap-3">
+                            <i class="fa-brands fa-whatsapp text-2xl"></i>
+                            Solicitar Orçamento
+                        </a>
+                        <a href="#servicos"
+                            class="bg-white/10 hover:bg-white/20 border border-white/20 text-white text-center px-8 py-4 rounded-xl font-bold text-lg transition-all backdrop-blur-sm">
+                            Nossos Serviços
+                        </a>
+                    </div>
+
+                    <div class="mt-10 flex items-center gap-6 text-brand-200">
+                        <div class="flex flex-col">
+                            <span class="font-bold text-2xl text-white">500+</span>
+                            <span class="text-sm">Clientes Satisfeitos</span>
+                        </div>
+                        <div class="h-10 w-px bg-brand-700"></div>
+                        <div class="flex flex-col">
+                            <span class="font-bold text-2xl text-white"><i class="fa-solid fa-star text-yellow-400"></i>
+                                5.0</span>
+                            <span class="text-sm">Avaliação Máxima</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative hidden lg:block" data-aos="fade-left" data-aos-duration="1200">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-tr from-brand-600/30 to-brand-400/30 rounded-[3rem] transform rotate-3 scale-105 filter blur-xl">
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?q=80&w=2069&auto=format&fit=crop"
+                        alt="Instalação de Ar Condicionado"
+                        class="relative rounded-[2rem] shadow-2xl border-4 border-white/10 object-cover h-[600px] w-full transform -rotate-2 hover:rotate-0 transition-all duration-500">
+
+                    <!-- Floating card -->
+                    <div class="absolute -bottom-8 -left-8 glass-card p-6 rounded-2xl shadow-2xl flex items-center gap-4 animate-bounce"
+                        style="animation-duration: 3s;">
+                        <div
+                            class="w-14 h-14 bg-green-100 rounded-full flex items-center justify-center text-green-500 shrink-0">
+                            <i class="fa-solid fa-shield-check text-2xl"></i>
+                        </div>
+                        <div>
+                            <p class="font-bold text-gray-900 leading-tight">Garantia de<br />Qualidade</p>
+                            <p class="text-sm text-gray-500">Em todos os serviços</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Wave shape divider -->
+        <div class="absolute bottom-0 left-0 right-0">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" class="w-full h-auto">
+                <path fill="#f9fafb" fill-opacity="1"
+                    d="M0,224L48,213.3C96,203,192,181,288,186.7C384,192,480,224,576,218.7C672,213,768,171,864,144C960,117,1056,107,1152,112C1248,117,1344,139,1392,149.3L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z">
+                </path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="py-24 bg-gray-50 relative" id="servicos">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+                <h2 class="text-brand-600 font-bold tracking-wide uppercase text-sm mb-2">O QUE FAZEMOS</h2>
+                <h3 class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-4">Soluções Completas em Climatização
+                </h3>
+                <p class="text-gray-600 text-lg">Oferecemos serviços especializados para garantir o melhor desempenho e
+                    vida útil do seu ar-condicionado.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 group"
+                    data-aos="fade-up" data-aos-delay="100">
+                    <div
+                        class="w-16 h-16 bg-blue-50 text-brand-600 rounded-xl flex items-center justify-center text-3xl mb-6 group-hover:bg-brand-600 group-hover:text-white transition-colors duration-300">
+                        <i class="fa-solid fa-tools"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold text-gray-900 mb-3">Instalação</h4>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Instalação técnica e padronizada de todas as marcas e modelos (Split, Inverter, Cassete),
+                        seguindo as normas dos fabricantes para garantir a garantia do seu equipamento.
+                    </p>
+                    <a href="https://wa.me/558399341400" target="_blank"
+                        class="text-brand-600 font-semibold flex items-center gap-2 group-hover:text-brand-800">
+                        Agendar Instalação <i
+                            class="fa-solid fa-arrow-right text-sm transition-transform group-hover:translate-x-2"></i>
+                    </a>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-brand-100 ring-2 ring-brand-500/20 group relative overflow-hidden"
+                    data-aos="fade-up" data-aos-delay="200">
+                    <div
+                        class="absolute top-0 right-0 bg-brand-500 text-white text-xs font-bold px-3 py-1 rounded-bl-lg">
+                        MAIS PEDIDO</div>
+                    <div
+                        class="w-16 h-16 bg-blue-50 text-brand-600 rounded-xl flex items-center justify-center text-3xl mb-6 group-hover:bg-brand-600 group-hover:text-white transition-colors duration-300">
+                        <i class="fa-solid fa-spray-can-sparkles"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold text-gray-900 mb-3">Limpeza / Higienização</h4>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Eliminação de fungos, bactérias e ácaros. Melhora a qualidade do ar, reduz o consumo de energia
+                        e previne doenças respiratórias para sua família.
+                    </p>
+                    <a href="https://wa.me/558399341400" target="_blank"
+                        class="text-brand-600 font-semibold flex items-center gap-2 group-hover:text-brand-800">
+                        Agendar Limpeza <i
+                            class="fa-solid fa-arrow-right text-sm transition-transform group-hover:translate-x-2"></i>
+                    </a>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 group"
+                    data-aos="fade-up" data-aos-delay="300">
+                    <div
+                        class="w-16 h-16 bg-blue-50 text-brand-600 rounded-xl flex items-center justify-center text-3xl mb-6 group-hover:bg-brand-600 group-hover:text-white transition-colors duration-300">
+                        <i class="fa-solid fa-screwdriver-wrench"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold text-gray-900 mb-3">Manutenção</h4>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Seu ar parou de gelar, está pingando ou fazendo barulho? Realizamos diagnósticos precisos,
+                        recarga de gás e substituição de peças originais.
+                    </p>
+                    <a href="https://wa.me/558399341400" target="_blank"
+                        class="text-brand-600 font-semibold flex items-center gap-2 group-hover:text-brand-800">
+                        Chamar Técnico <i
+                            class="fa-solid fa-arrow-right text-sm transition-transform group-hover:translate-x-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features / Why Choose Us -->
+    <section class="py-20 bg-white" id="sobre">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div data-aos="fade-right">
+                    <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?q=80&w=2070&auto=format&fit=crop"
+                        alt="Técnico Especializado" class="rounded-2xl shadow-xl border-4 border-gray-50">
+                </div>
+
+                <div data-aos="fade-left">
+                    <h2 class="text-brand-600 font-bold tracking-wide uppercase text-sm mb-2">POR QUE NOS ESCOLHER</h2>
+                    <h3 class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-6">Expertise e compromisso com o seu
+                        conforto</h3>
+                    <p class="text-gray-600 text-lg mb-8 leading-relaxed">
+                        A TH Climatização é referência em João Pessoa por entregar serviços que combinam técnica
+                        apurada, agilidade e preço justo. Não terceirizamos, nós resolvemos.
+                    </p>
+
+                    <div class="space-y-6">
+                        <div class="flex flex-start gap-4">
+                            <div
+                                class="mt-1 w-12 h-12 bg-brand-50 rounded-full flex items-center justify-center text-brand-600 text-xl shrink-0">
+                                <i class="fa-solid fa-bolt"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold text-gray-900 mb-1">Atendimento Rápido</h4>
+                                <p class="text-gray-600">Sabemos a importância de um ambiente climatizado no calor de
+                                    João Pessoa. Nosso foco é a agilidade.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-start gap-4">
+                            <div
+                                class="mt-1 w-12 h-12 bg-brand-50 rounded-full flex items-center justify-center text-brand-600 text-xl shrink-0">
+                                <i class="fa-solid fa-user-shield"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold text-gray-900 mb-1">Profissionais Qualificados</h4>
+                                <p class="text-gray-600">Equipe constantemente atualizada com as novas tecnologias
+                                    (Inverter) e normas de segurança.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-start gap-4">
+                            <div
+                                class="mt-1 w-12 h-12 bg-brand-50 rounded-full flex items-center justify-center text-brand-600 text-xl shrink-0">
+                                <i class="fa-solid fa-hand-holding-dollar"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold text-gray-900 mb-1">Preço Justo e Transparente</h4>
+                                <p class="text-gray-600">Orçamento sem surpresas. Detalhamos o problema e a solução
+                                    antes de iniciar qualquer serviço.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-24 relative overflow-hidden">
+        <div class="absolute inset-0 bg-brand-600"></div>
+        <div class="hero-pattern absolute inset-0 opacity-50"></div>
+
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center" data-aos="zoom-in">
+            <h2 class="text-4xl md:text-5xl font-extrabold text-white mb-6">Agende uma manutenção imediata.</h2>
+            <p class="text-xl text-brand-100 mb-10 text-center">Nós vamos até você! Atendimento em toda João Pessoa e
+                região metropolitana.</p>
+
+            <a href="https://wa.me/558399341400" target="_blank"
+                class="pulse-btn inline-flex items-center justify-center bg-green-500 hover:bg-green-600 text-white px-10 py-5 rounded-full font-bold text-xl transition-all transform hover:scale-105 shadow-[0_0_30px_rgba(37,211,102,0.5)]">
+                <i class="fa-brands fa-whatsapp text-3xl mr-3"></i>
+                Falar com a TH Climatização
+            </a>
+
+            <p class="mt-6 text-brand-200 text-sm"><i class="fa-solid fa-clock mr-1"></i> Resposta rápida pelo WhatsApp
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 pt-16 pb-8 border-t border-gray-800" id="contato">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-12 mb-12 text-center md:text-left">
+                <!-- Brand -->
+                <div class="flex flex-col items-center md:items-start">
+                    <div class="flex items-center gap-2 mb-4">
+                        <div class="w-8 h-8 bg-brand-600 rounded flex items-center justify-center text-white text-sm">
+                            <i class="fa-solid fa-snowflake"></i>
+                        </div>
+                        <span class="font-bold text-2xl tracking-tight text-white">TH<span
+                                class="text-brand-500">Climatização</span></span>
+                    </div>
+                    <p class="text-gray-400 mb-6 max-w-sm">
+                        Especialistas na instalação, limpeza e manutenção de ar-condicionado em João Pessoa. O clima
+                        ideal garantido.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="https://www.instagram.com/thmanutencaoe" target="_blank"
+                            class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-gradient-to-tr hover:from-yellow-400 hover:via-red-500 hover:to-purple-500 hover:text-white transition-all transform hover:-translate-y-1">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a href="https://wa.me/558399341400" target="_blank"
+                            class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-green-500 hover:text-white transition-all transform hover:-translate-y-1">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Links -->
+                <div class="flex flex-col items-center md:items-start">
+                    <h4 class="text-white font-bold text-lg mb-4">Serviços Rápidos</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#servicos" class="text-gray-400 hover:text-brand-500 transition-colors">Instalação
+                                de AC</a></li>
+                        <li><a href="#servicos" class="text-gray-400 hover:text-brand-500 transition-colors">Limpeza
+                                Anti-ácaro</a></li>
+                        <li><a href="#servicos" class="text-gray-400 hover:text-brand-500 transition-colors">Manutenção
+                                Corretiva</a></li>
+                        <li><a href="#servicos" class="text-gray-400 hover:text-brand-500 transition-colors">Carga de
+                                Gás</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div class="flex flex-col items-center md:items-start">
+                    <h4 class="text-white font-bold text-lg mb-4">Contato</h4>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3 justify-center md:justify-start">
+                            <i class="fa-solid fa-location-dot text-brand-500 mt-1"></i>
+                            <span class="text-gray-400">João Pessoa e região,<br />Paraíba</span>
+                        </li>
+                        <li class="flex items-center gap-3 justify-center md:justify-start">
+                            <i class="fa-brands fa-whatsapp text-brand-500"></i>
+                            <a href="https://wa.me/558399341400" target="_blank"
+                                class="text-gray-400 hover:text-white transition-colors">(83) 9934-1400</a>
+                        </li>
+                        <li class="flex items-center gap-3 justify-center md:justify-start">
+                            <i class="fa-solid fa-phone text-brand-500"></i>
+                            <a href="tel:+5583998269874" class="text-gray-400 hover:text-white transition-colors">(83)
+                                99826-9874</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-gray-500 text-sm text-center md:text-left">
+                    &copy;
+                    <script>document.write(new Date().getFullYear())</script> TH Climatização. Todos os direitos
+                    reservados.
+                </p>
+                <p class="text-gray-600 text-xs">
+                    Desenvolvido com tecnologia e requinte para Alta Performance.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Init AOS Animations
+        AOS.init({
+            once: true,
+            offset: 50,
+        });
+
+        // Navbar Scroll Effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 20) {
+                navbar.classList.add('shadow-md', 'bg-white/95');
+                navbar.classList.remove('bg-white/90');
+            } else {
+                navbar.classList.remove('shadow-md', 'bg-white/95');
+                navbar.classList.add('bg-white/90');
+            }
+        });
+
+        // Mobile Menu Toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu on click
+        menu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+
+</html>
